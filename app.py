@@ -86,10 +86,9 @@ if page == "Dashboard":
         
     conn.close()
 
-# --- PAGE: LIVE CHECKOUT SIMULATOR (NEW INTERACTIVE MODULE) ---
+# --- PAGE: LIVE CHECKOUT SIMULATOR ---
 elif page == "Live Checkout Simulator":
     st.title("🛒 Live Checkout Simulator")
-    st.markdown("Use this to demonstrate database triggers in real-time. Simulate shipping an order and watch the system instantly react if stock drops below the threshold.")
     
     conn = sqlite3.connect('supply_chain.db')
     df_products = pd.read_sql_query("SELECT * FROM Inventory", conn)
